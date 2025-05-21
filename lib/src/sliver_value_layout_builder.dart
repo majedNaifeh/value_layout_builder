@@ -122,7 +122,6 @@ class _RenderSliverValueLayoutBuilder<T> extends RenderSliver
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    // This renderObject does not introduce additional offset to child's position.
     if (child?.geometry?.visible == true) context.paintChild(child!, offset);
   }
 
@@ -134,5 +133,10 @@ class _RenderSliverValueLayoutBuilder<T> extends RenderSliver
         child!.hitTest(result,
             mainAxisPosition: mainAxisPosition,
             crossAxisPosition: crossAxisPosition);
+  }
+
+  @override
+  void debugValidateChild(RenderObject child) {
+    assert(child is RenderSliver);
   }
 }
