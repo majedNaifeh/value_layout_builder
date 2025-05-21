@@ -139,4 +139,15 @@ class _RenderSliverValueLayoutBuilder<T> extends RenderSliver
   void debugValidateChild(RenderObject child) {
     assert(child is RenderSliver);
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    // You can add properties here if there are any specific to this render object
+    // For example, if you wanted to expose the 'value' from constraints for debugging:
+    // final SliverValueConstraints<T>? currentConstraints = constraints as SliverValueConstraints<T>?;
+    // if (currentConstraints != null) {
+    //   properties.add(DiagnosticsProperty<T>('value', currentConstraints.value));
+    // }
+  }
 }
